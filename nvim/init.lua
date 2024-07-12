@@ -48,6 +48,8 @@ require("lazy").setup({
 		{'folke/tokyonight.nvim'}, -- my colour scheme. tokyonight >>>> gruvbox
 		{'famiu/feline.nvim'}, -- status bar
 		{'psliwka/vim-smoothie'}, -- smooth scrolling
+		{'github/copilot.vim'}, -- copilot
+		{'nvim-treesitter/nvim-treesitter'}, -- for syntax highlighting
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
@@ -62,3 +64,25 @@ vim.opt.termguicolors = true
 vim.cmd.colorscheme('tokyonight') -- i want tokyonight
 
 require('feline').setup() -- status bar
+
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "cpp", "arduino" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  auto_install = true,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" },
+
+  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+  highlight = {
+    enable = true,
+  },
+}
