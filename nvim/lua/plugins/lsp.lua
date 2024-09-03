@@ -27,7 +27,13 @@ return {
 			-- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 			require('mason').setup({})
 			require('mason-lspconfig').setup({
-				ensure_installed = {"lua_ls", "clangd", "pylsp", "arduino_language_server"},
+				ensure_installed = {
+					"lua_ls",
+					"clangd",
+					"pyright",
+					"arduino_language_server",
+					"rust_analyzer",
+				},
 				handlers = {
 					function(server_name)
 						require('lspconfig')[server_name].setup({})
