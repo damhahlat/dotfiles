@@ -29,9 +29,7 @@ return {
 			require('mason-lspconfig').setup({
 				ensure_installed = {
 					"lua_ls",
-					"clangd",
 					"pyright",
-					"arduino_language_server",
 					"rust_analyzer",
 				},
 				handlers = {

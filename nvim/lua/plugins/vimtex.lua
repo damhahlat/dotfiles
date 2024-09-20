@@ -1,11 +1,11 @@
 return {
 	{
-		{
-			"lervag/vimtex",
-			lazy = false,     -- we don't want to lazy load VimTeX
-			config = function()
-				vim.g.vimtex_view_method = "mupdf"
-			end,
-		}
+		'lervag/vimtex',
+		ft = 'tex',
+		lazy = false,
+		config = function()
+			vim.g.vimtex_view_method = 'zathura'
+			vim.g.vimtex_compiler_engine = 'lualatex'
+		end,
 	}
 }
