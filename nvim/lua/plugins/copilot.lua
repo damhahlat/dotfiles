@@ -1,7 +1,5 @@
 return {
 	{
-		'github/copilot.vim', -- copilot
-
+		"github/copilot.vim",
 	}
-
 }
